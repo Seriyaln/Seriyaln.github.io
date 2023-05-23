@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>服务器部署安装问题</title>
+    <link href="/2023/05/23/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/"/>
+    <url>/2023/05/23/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<h1 id="无法通过yum安装软件"><a href="#无法通过yum安装软件" class="headerlink" title="无法通过yum安装软件"></a>无法通过yum安装软件</h1><p>网络原因，需要进入到ensxx的配置文件中将BOOTPROTO设成dhcp</p><h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h2 id="10061-无法连接数据库"><a href="#10061-无法连接数据库" class="headerlink" title="10061 无法连接数据库"></a>10061 无法连接数据库</h2><p>这个问题比较抽象，我安装完后服务正常启动，配置也没有任何的问题，当使用命令行连接数据库时就会报10061错误，网络上的解决方案普遍都是因为服务没有启动，但是我确定我的服务肯定是启动了的。</p><blockquote><p>最终，使用msi安装包安装后，开始菜单有MySQL给的命令行，使用那个命令行可以成功连接数据库。使用windows自带的命令行无法访问</p></blockquote><h2 id="远程访问"><a href="#远程访问" class="headerlink" title="远程访问"></a>远程访问</h2><p>远程访问需要通过修改数据库中系统用户，将localhost改为%，很神奇的是，即使设置了远程访问，我在本机还是连接不上，但是别人可以。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>经验总结</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>服务器</tag>
+      
+      <tag>Linux</tag>
+      
+      <tag>Windows</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>使用HB+Nginx部署项目（Vue）</title>
+    <link href="/2023/05/23/%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E9%83%A8%E7%BD%B2/"/>
+    <url>/2023/05/23/%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E9%83%A8%E7%BD%B2/</url>
+    
+    <content type="html"><![CDATA[<h1 id="1、运行项目"><a href="#1、运行项目" class="headerlink" title="1、运行项目"></a>1、运行项目</h1><p>先运行一次项目，确保项目能够正常运行</p><h1 id="2、获取资格"><a href="#2、获取资格" class="headerlink" title="2、获取资格"></a>2、获取资格</h1><p>如果是公司项目打包，一般需要权限，可以联系公司的负责人，将HB账号的邮箱发给负责人，负责人会给你权限，个人项目的话可以忽略这一步</p><h1 id="3、发行"><a href="#3、发行" class="headerlink" title="3、发行"></a>3、发行</h1><p>点击发行————网站、网页、手机H5————发行</p><p><img src="https://s2.loli.net/2023/05/23/ZQYkrNUbdS4RaFX.png"></p><blockquote><p>域名填服务器地址，如果是个人就填本机的地址</p></blockquote><p>导出的文件一般在项目文件夹的unpackage中</p><p><img src="https://s2.loli.net/2023/05/23/JQTimFYp3ZbEOlK.png" alt="image-20230523093301154"></p><p>打开目录</p><p><img src="https://s2.loli.net/2023/05/23/zAU7LFnXa6xH8RG.png" alt="image-20230523093327143"></p><p>将这两个文件放到服务器目标目录内，再配置好Nginx就可以了</p><h1 id="4、Web配置"><a href="#4、Web配置" class="headerlink" title="4、Web配置"></a>4、Web配置</h1><p>点击项目下的manifest.json文件，找到web配置</p><p><img src="https://s2.loli.net/2023/05/23/DIhiGSHnNTc4yPz.png" alt="image-20230523094343331"></p><p>根据需要修改路径</p><h1 id="5、配置Nginx"><a href="#5、配置Nginx" class="headerlink" title="5、配置Nginx"></a>5、配置Nginx</h1><p>进入到Nginx的conf目录下，编写nginx.conf</p><p><img src="https://s2.loli.net/2023/05/23/4HSBj13FZm5hiuP.png" alt="image-20230523093529088"></p><ul><li>listen表示nginx的端口，根据需要修改</li><li>location &#x2F; 表示访问地址，例如本机的地址是192.168.7.1，那么location就似乎192.168.7.1，location后可以添加路径用‘&#x2F;’隔开，例如location&#x2F;var，届时访问192.168.7.1&#x2F;var就会执行相应的配置</li><li>root表示访问时的目录，HTML表示nginx目录下html文件夹，可以根据自己的需要进行修改</li></ul><p>实例：</p><p><img src="https://s2.loli.net/2023/05/23/nDMVqcON13ZgSmf.png" alt="image-20230523093909326"></p><blockquote><p>假如我们要访问位于D:\project\zeus-site-office-show-v2\hik-app-vue下的项目，只需要将打包好的文件放在hik-app-vue的文件夹下即可。如果我们想通过访问192.168.7.1&#x2F;hik&#x2F;appH5就访问到项目，则需要再hik-app-vue下新建hik文件夹，在hik文件夹内新建appH5文件夹，将打包的文件放入appH5文件夹，这样我们通过访问192.168.7.1&#x2F;hik&#x2F;appH5就可以访问到项目了。</p></blockquote><h1 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h1><p>如果打开manifest.json不是配置视图，可以先打开整个项目的文件夹，再打开需要打包的项目文件夹即可</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>经验总结</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>服务器</tag>
+      
+      <tag>部署</tag>
+      
+      <tag>Nginx</tag>
+      
+      <tag>Vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>答辩总结</title>
+    <link href="/2023/05/09/%E7%AD%94%E8%BE%A9%E6%80%BB%E7%BB%93/"/>
+    <url>/2023/05/09/%E7%AD%94%E8%BE%A9%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="答辩开始"><a href="#答辩开始" class="headerlink" title="答辩开始"></a>答辩开始</h1><p>花了大概十分钟左右介绍我的项目，整个的介绍过程还是比较顺利的，就是有点紧张，整个介绍的过程说话有点短路的感觉。</p><h1 id="提问"><a href="#提问" class="headerlink" title="提问"></a>提问</h1><p>到了答辩组提问的环节，首先还是先指出了我论文中的不足之处，主要是有一个章节都是图，没有文字描述，论文讲究的是文字为主，图片是补充描述，不能本末倒置。然后就是提了一些项目中的细节问题，指出我的项目并没有进行完整的业务调查分析，这个确实是我的问题，我项目的灵感来源之前的兼职经验，但是我对当时兼职时使用的那个前台系统其实并不熟悉，只知道有的一些大概的功能。然后就是问了三个问题，三个问题我当时太急了，没有仔细思考就回答了，现在回想起来其实可以做得更好。</p><h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p>顺利通过答辩</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>总结</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>总结</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>账单管理思路整理</title>
+    <link href="/2023/05/09/%E8%B4%A6%E5%8D%95%E7%AE%A1%E7%90%86%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/"/>
+    <url>/2023/05/09/%E8%B4%A6%E5%8D%95%E7%AE%A1%E7%90%86%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/</url>
+    
+    <content type="html"><![CDATA[<h1 id="思路整理"><a href="#思路整理" class="headerlink" title="思路整理"></a>思路整理</h1><h2 id="1、明确需求"><a href="#1、明确需求" class="headerlink" title="1、明确需求"></a>1、明确需求</h2><p>这个页面主要是用来以天为单位，显示当天的销售情况。</p><ul><li><p>显示所有销售数据</p><p>只需要显示日期、当天收入、当天支出，设计一个按钮，通过点击可以查看当天的销售详情：商品名称、商品数量、金额、是收入还是支出</p></li><li><p>删除</p><p>支持批量删除和单条删除</p></li><li><p>是否支持修改</p><p>目前并不打算做修改功能，在本页面进行修改操作时需要牵扯到许多的数据，十分复杂，即使要做，本功能的优先级也不高</p></li><li><p>新增账单</p><p>因为没有前台页面，所有各种收入支出就依靠手动录入账单来处理数据，新增是只增加当天的账单，模拟每天下班时应该都会进行一次当天的收入统计，所以不支持添加其他天的账单，如果没有录入的话就算在另外一天上吧。</p></li></ul><h2 id="2、功能实现的思路"><a href="#2、功能实现的思路" class="headerlink" title="2、功能实现的思路"></a>2、功能实现的思路</h2><ul><li><p>展示数据</p><p>进入页面先要展示所有的数据，由于在数据库中的字段都不是一天的，同一天的数据可能会有几条，所以在后台就行数据处理时需要留意对所有的收入和支出进行统计。</p><p>新增时也需要初始化数据，不过只需要出示话商品名称就可以了，要支持可编辑，可能需要再新建一个dialog，点击确认进行添加</p></li><li><p>添加功能</p><p>依靠mybait-plus的saveBatch方法实现批量添加</p></li></ul><h2 id="3、目前情况"><a href="#3、目前情况" class="headerlink" title="3、目前情况"></a>3、目前情况</h2><blockquote><p>2023年5月9日 已完成添加前端页面设计，后续编写接口测试即可</p></blockquote><h2 id="4、完成情况"><a href="#4、完成情况" class="headerlink" title="4、完成情况"></a>4、完成情况</h2><p>2023年5月15日 已完成所有功能，预计15号优化完所有功能和样式，16号开始准备ppt等材料</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>思路</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>笔记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>需求定制总结</title>
+    <link href="/2023/05/08/%E9%9C%80%E6%B1%82%E5%AE%9A%E5%88%B6%E6%80%BB%E7%BB%93/"/>
+    <url>/2023/05/08/%E9%9C%80%E6%B1%82%E5%AE%9A%E5%88%B6%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="软件定制项目"><a href="#软件定制项目" class="headerlink" title="软件定制项目"></a>软件定制项目</h1><h2 id="1、项目简介"><a href="#1、项目简介" class="headerlink" title="1、项目简介"></a>1、项目简介</h2><p>本项目采用SpringBoot框架进行开发，公众号前端采用Vant组件，需求收集前端采用Vue组件，前端主要内容有：公司信息展示、案件列表、案件详情页，主要实现的功能有展示和发送定制请求，本项目主要用于客户发送定制需求。</p><h2 id="2、前端技术"><a href="#2、前端技术" class="headerlink" title="2、前端技术"></a>2、前端技术</h2><p>Vant、Axios、Vue</p><h2 id="3、后端技术"><a href="#3、后端技术" class="headerlink" title="3、后端技术"></a>3、后端技术</h2><p>SpringBoot、MyBatis、SpringMVC、Hutool、MySQL</p><h2 id="4、开发难点"><a href="#4、开发难点" class="headerlink" title="4、开发难点"></a>4、开发难点</h2><ul><li>页面布局，兼容适配</li><li>网页授权获取用户openid</li><li>自定义分享</li></ul><h2 id="5、开发过程中出现的问题与解决方法"><a href="#5、开发过程中出现的问题与解决方法" class="headerlink" title="5、开发过程中出现的问题与解决方法"></a>5、开发过程中出现的问题与解决方法</h2><ul><li><p>环境部署</p><blockquote><p>一开始我一直无法搭建环境，后面明哥发现是我的node版本太高了，给我整了一个10.0的node就解决了</p></blockquote></li><li><p>页面适配</p><blockquote><p>刚开始时，由于缺乏前端开发经验， 加上已经很久没有写过css，导致许多内容都有点生疏，以前自己做项目的时候都不会考虑适配的问题，能在本地电脑上显示没有问题基本上就不管了，在正式项目开发过程中不能有这种问题，必须要考虑适配的问题。一开始使用常用的px时，发现在手机端中因为像素高但屏幕相比显示器小得多，所以实际显示的效果就是即使px都调到3、400了字体依旧很小，后来采用rem和em，这两种单位是相对长度，是根据当前html元素的大小来决定的，使用这种单位后发现确实字体很容易就变得相对之前px的时候要大得多，于是之后都一直用rem和em进行开发。做完前端页面后，本想着在电脑端看看效果，结果发现电脑端F12查看页面时，字体非常大，完全超出了屏幕，并且有一些页面合适，有些页面完全乱了，这下又懵逼了，后来想了想原因是：每个页面字体大小没有同一，就导致使用相对长度的时候，rem和em的根据也有所不同，并且我项目使用的rem和em基本上混着用就更乱了。一筹莫展的时候，有发现了一个新的单位：vh和vw，这两个单位一个是根据屏幕高度一个是根据屏幕宽度来实现控制元素大小，将所有rem和em的单位都替换成vh和vw后，无论是在别人手机、我自己的手机还是电脑上都能正常显示，虽然有些差异，但总得来说问题不大，至此适配的问题就解决了。</p></blockquote></li><li><p>后端接口</p><blockquote><p>在搭建完收集界面后就是写后端接口了，因为很久没有用MyBatis写过完成的一个请求流程了，所以实际开发时有点乱，好在迅速调整了过来，很快就顺利将一个分页接口写了出来。在写条件分页查询时出现了问题，在mapper接口方式中传递了一个参数，但是在xml中无论怎样都无法读取到这个参数，无法进行条件查询，后来问了大佬们都没办法解决这个问题，很神奇，我记得这个问题将近折磨了我两天，其中换过MyBatis-Plus写接口以及还是不行，使用mp后问题更大了，项目不兼容mp，后面删掉mp的内容重新使用MyBatis写请求，连一开始可以显示的分页数据都无法查询了，项目都跑不起了，之前好歹还能跑，提示方法没有找到。当时其实已经想到了肯定有缓存和什么地方有东西没删干净，但是即使我无数次使用clean和install都无法解决这个问题。后面实现没有办法，将我写的代码进行了备份，然后重新扒取了项目，重新使用MyBatis写请求总算是能够显示数据了，下面就还是带条件查询的问题了，这个问题的解决方法很神奇，他自己突然就好了，我也不知道咋好的，反正就是好了，泪目。</p></blockquote></li><li><p>主页的滚动效果</p><blockquote><p>原型中主页是一个滚动显示内容的效果，通过上下划动切换不同的内容，一开始脑子转的慢，把这个东西想得很复杂，还想着用display控制元素的显示和隐藏，通过js来计数，属实是脑子不太行，甚至还在网上找了各种各样的组件想实现这个效果。后面某一天脑子突然开窍了，这不就是一个上下划动的轮播图吗，把自动播放、循环和指示关了就行，于是这个效果就这样做出来了。滚动实际上还有一个bug，就是在pc端如果使用鼠标滚轮会改变样式，一开始想着静止鼠标滚轮事件，后面实现不了就没管了，小bug，后续如果有必要再修改</p></blockquote></li><li><p>样式互相干扰</p><blockquote><p>在设计过程中发现不同页面的css样式发生了干扰，一个页面的高度变化在发生跳转时会影响另一个页面，这个后来对每一个页面都有对应的class包裹住，css设计时前面加上对应class就行了，还有在js中设置了每次跳转页面都会回到页面顶部，这个样式问题就解决了</p></blockquote></li><li><p>案例每次跳转返回时回到对应的标签页</p><blockquote><p>这个简单，用浏览器的本地存储记录一下跳转前所在的标签页id，返回时赋值就行了</p></blockquote></li><li><p>获取用户openid</p><blockquote><p>因为确实缺少微信H5开发的经验导致我在看开发文档和网上教程的时候一度非常懵逼，这个功能是在磕磕碰碰中做出来的，现在回过头来看，确实不算很难，主要是在看文档的过程中要理解一些关键的步骤，实际无非就是像微信发送请求，微信通过了就会把用户的openid等信息发回给你，接收就可以了。刚做出来的时候，要将得到的数据进行存储，我居然想到在后端中进行存储，这样做不是不行，还是如果多个用户发送请求时会特别乱，逻辑特别混乱，混乱到我现在写这个总结的时候已经不知道应该怎么表述当时的情况了。后来灵光一闪在浏览器存储，当需要的时候发送到后台就行了，又获得一个新的收获。</p></blockquote></li><li><p>自定义分享</p><blockquote><p>这个更是重量级，一看文档的时候脑子CPU就已经过载了，完全整不明白，后来还是慢慢静下心来仔细研究开发文档，还是成功做出来了，实际上还是不难，甚至比openid的要简单不少，因为这个自定义分享不需要进行强制跳转，只需要向微信发送请求然后获取返回字段就行了，openid和自定义分享纯纯是因为没有经验一直整不明白怎么回事，加上当时催得急，心情浮躁卡了很久时间，其实实际上开发文档已经写的很明白，理解能力还是很重要的，静下心来仔细研究肯定能够整明白，不能浮躁。后续会将openid和自定义分享专门做一个经验分享。值得一提的是，微信没有给网页唤起分享面板的接口，所以所谓的自定义分享其实就是定制右上角点击分享时的卡片内容而已。</p></blockquote></li></ul><h2 id="6、总结"><a href="#6、总结" class="headerlink" title="6、总结"></a>6、总结</h2><p>这是我第一次做这种能够面向所有用户的项目，而不是自己一个人做着完，只能给自己看的项目。项目已经成功完成并上线了，虽然有很多bug，但是还是很满意的，后续就慢慢的优化和修改bug了。通过这个项目还是学会很多东西的，通过一次次解决问题，积累了经验，增长了技术。(<em>^▽^</em>)</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>项目总结</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>公众号H5</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2023/05/08/hello-world/"/>
+    <url>/2023/05/08/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><h1 id="测试更新"><a href="#测试更新" class="headerlink" title="测试更新"></a>测试更新</h1>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
