@@ -16,15 +16,15 @@
   <meta name="author" content="黄展鸿">
   <meta name="keywords" content="">
   
-    <meta name="description" content="拟在毕设中添加新的功能界面，账单管理界面，这是为了方便整理思绪而写的">
+    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="账单管理思路整理">
 <meta property="og:url" content="https://seriyaln.github.io/2023/05/09/%E8%B4%A6%E5%8D%95%E7%AE%A1%E7%90%86%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/index.html">
 <meta property="og:site_name" content="Seriyaln个人博客">
-<meta property="og:description" content="拟在毕设中添加新的功能界面，账单管理界面，这是为了方便整理思绪而写的">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-09T07:17:04.000Z">
-<meta property="article:modified_time" content="2023-05-15T00:35:50.808Z">
+<meta property="article:modified_time" content="2023-05-29T00:51:13.707Z">
 <meta property="article:author" content="黄展鸿">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary_large_image">
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          552 字
+          4.8k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          5 分钟
+          40 分钟
         
       </span>
     
@@ -272,39 +272,22 @@
             <h1 style="display: none">账单管理思路整理</h1>
             
             
-              <div class="markdown-body">
-                
-                <h1 id="思路整理"><a href="#思路整理" class="headerlink" title="思路整理"></a>思路整理</h1><h2 id="1、明确需求"><a href="#1、明确需求" class="headerlink" title="1、明确需求"></a>1、明确需求</h2><p>这个页面主要是用来以天为单位，显示当天的销售情况。</p>
-<ul>
-<li><p>显示所有销售数据</p>
-<p>只需要显示日期、当天收入、当天支出，设计一个按钮，通过点击可以查看当天的销售详情：商品名称、商品数量、金额、是收入还是支出</p>
-</li>
-<li><p>删除</p>
-<p>支持批量删除和单条删除</p>
-</li>
-<li><p>是否支持修改</p>
-<p>目前并不打算做修改功能，在本页面进行修改操作时需要牵扯到许多的数据，十分复杂，即使要做，本功能的优先级也不高</p>
-</li>
-<li><p>新增账单</p>
-<p>因为没有前台页面，所有各种收入支出就依靠手动录入账单来处理数据，新增是只增加当天的账单，模拟每天下班时应该都会进行一次当天的收入统计，所以不支持添加其他天的账单，如果没有录入的话就算在另外一天上吧。</p>
-</li>
-</ul>
-<h2 id="2、功能实现的思路"><a href="#2、功能实现的思路" class="headerlink" title="2、功能实现的思路"></a>2、功能实现的思路</h2><ul>
-<li><p>展示数据</p>
-<p>进入页面先要展示所有的数据，由于在数据库中的字段都不是一天的，同一天的数据可能会有几条，所以在后台就行数据处理时需要留意对所有的收入和支出进行统计。</p>
-<p>新增时也需要初始化数据，不过只需要出示话商品名称就可以了，要支持可编辑，可能需要再新建一个dialog，点击确认进行添加</p>
-</li>
-<li><p>添加功能</p>
-<p>依靠mybait-plus的saveBatch方法实现批量添加</p>
-</li>
-</ul>
-<h2 id="3、目前情况"><a href="#3、目前情况" class="headerlink" title="3、目前情况"></a>3、目前情况</h2><blockquote>
-<p>2023年5月9日 已完成添加前端页面设计，后续编写接口测试即可</p>
-</blockquote>
-<h2 id="4、完成情况"><a href="#4、完成情况" class="headerlink" title="4、完成情况"></a>4、完成情况</h2><p>2023年5月15日 已完成所有功能，预计15号优化完所有功能和样式，16号开始准备ppt等材料</p>
+              
+              <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="037d1378e615eab118d79d12fc8f0768c271f6112cf59325b8e47f169715dd89">8c83c1fd70b2001f095a68c8e758fb295c4f063044f716f40246118917c673cb222cd92dddfa83195eda191a3424f0e6bafe9cc455309a99a6d1b3d8e16a11f6cbc3184d5b77ba54ed4fa4c4d19906b5073629ebf0e0245df42602c562e7f4d81e086804c69e810f265c87d35c2b70de67bd16b438a537be20897242509353f792dd347139c5cb74b417bd18385e0ca23c32bd96754468c2c0c43fb2372220132b6918ec8c2d570e0b1ae5950a5c056a0d1f3db512189d0c29f9b3c8365f6c7a6453c77ae916f3c78d4a515324d3208bf448c2e065fbf80b80002ef2a08fc96d9a62357b32eb1d0665094522a953bc89508f1417eb1b83abf0b1d1ece83fa5d82a151e2effbba042d373baf44b9b11ec8349ed73560ec50f57c73f0a3693a212a30c6a16cc0f4ea54dd300b3a8ef0f5b98369ed5a1519f970d38392a57286a704100f8c46160a6c60f9c4c3fff357b5a1afb8484b74a83d80f8d1779e6924de86194cec374bc0a28637e653d24f5d64ae57e3d4722cb03d3dbba80c68dbde223a712de90b1947115b0b1bd6158c7d61df7952a7e86bda2c55c6fa05dc1135317a5db9ed8b39468c84905fd5c86d28a57565fd5c98635df3e76a5a0610caf93d60bd6751001270a017110c7165ebc893b2b5348bd3cfcada8ba3a99509fdd64077bdb1287a39cc8b241cd305de547cd7330b122901355e04344e6a0a008d50a77de83400747451c426045fef7fa3e9332195a527ea2e1bba186dc3e9aa0fe972dc65159534612a7681ba3bdc9517c580280364776f196c9518237e4186d831ce426487680b0d09d94cc8f2c3f539f0f0c741e22ef7280cdd070f229bfa15db036f83efbd6b0b43983e28a3485a4cd4a34e94dd04730ead92976a9a5e218e0f04e444c87453909d9795553593816c829f08b0016e44cd9f2dceded944d6116443ca8ca5a8d9c3d726f557d5c6bdf49c8292d631d39de347b1fe629afd054720d88a5f78f121b2f41b8b07efe08130e972f70d4cdbf7398ee5fab31bbfafbf7c55502b73e2b9d1e5d3939ccaed71cfa44d9ba73f9cdfea0e40f4d973e10ac79f1f2c166744d9b2357137a9817937afe0e833b3c0bebf4e4cd72b679722c7369bfe9c358e2b74c7075d851c928a67427ad40e5f4a0ecf3da923c9d1c62c4aa1dae7355d8a076bedb1d2026b1423b046e5dcdc574c21705bb3ae195423dd28294640add763bf20a10e01c837a44fd786be415307310d5a946f2da243fd0a06e44c306e38d24a7e2534df0950831dfc57458a1bfe3c18ee49e3408e727f1f127cdb1c76335f35ae28561c9f41000f1efb3b70a68bb1da0c23566e426ccdf91210342b824fe9ef2092c8afc384666dc68c22c17cd273d4101af89825b024863789d44b8e067c63ac1ebef647af2fcbad01d7c77df7db36ee61c746e9c927438f3f5f6bf30d74450823eb1eb3deda17efba27c56ea07fb5eaab3eda10cce95ee0e58730d8e152e1eccde129f227fffd2064e7ac2e7fa4e538ccb7e5762acc037d1e6ea198e67f029ea1792a408f5b7d60013fb8d6ec6fa097959e3c08296d3ef80a3a920d0c04156e3238e8ab3e4a3dd5ed86e39b6050e3d5b2849071a0cba7756349666d2b250b1821907f38317f7f77f6dbc6dbef2d4c82aa3abe95f2a62849958bf171cc1b570a34bf2fcb52329bd90d61fe8d6db503241433bbd5eccec3a8920748f6029510c02b875f4794df1c5ce90a258fb2aa3e1b4e1ae7c84b87be984e3ccbb24c4554d1d6e178f72ba91571034d72e31d27daa4cf57e9e1ceb3ef64237d4ba843f3a0e6c39be9d513184f785f1cdcf06e34ce009c356fe259f14832aa8772b31fa64a6b538c602469b83ce11711b9bba6e188788933e9ab5750a34633e2bc9cf79000fede30369db65582327ed06ed136d01edbe0724355a2a2cc5927362bb1963a820cacb48ed22c14235b3c8cfc572585462cbfb5730c31707d2e592bbf92b804f3a55c7c90b248769ced35c0816e93981030f9bc27c3182e7a7a971e2418484719c7298396c9764fc4d617e7edefd9b18cd17babeed5edd51774cbd8c86ff797ac8eaa5386875f9e982825ed9347046067107528c2453391d2b981e5d7970830cba49f0e14c1e37ad28a6679aef18ab542daa1080d8b79bf0f5885ed3cf9b65fae1a995e20e12f79660e15dc3606cf3676572f6ff60ed08df1b279e0015d129c185cd04a7de58379a284eb5950bd55e9893ecd40bd00a39ad0a940d734d1849a69b585cb7ede228b42fb954b80b9af840807e904729d753c3218702cfabbb53d2a93a5b5cba10f1f0db8ee260b0acff04aea9d7a8ef6b9c363cbd99bc00eeaefab87f9b21b5924eb5cbb3207f23fa76a2b166b30b682d4d11fb833bb5f83e037fcef80826debbc488814aae2811ceaeb0c036cbf3d2fb25990791006cb1b5f8b269f9af5eed7d95d5c24f17ba43c8db3302fdd91786df0f06d9dfe73458adb0cc361d9a625e9e0eb6b949e5c5aca7a751bf456d23148542b85d13c66813ef65c470378429dd25ac3de0c02e1e36f8b7e133d2a5a1f96b4a6e78884d2b18a4b12006dfb22a6a6185bebef9f174e109945ec5d3ffe20b641161c09285976e3fcf4d37e756a0f34f2687fd39897dfef1b9195be46254dc21782a0079a2c34ff4d4a6d0184062d958ba88f9b4f6037faa30e01c70826657087c2f1fbea02a4beb92a60bd281309bfcc921b71313ade2280beed9119530946cd709e1fc483f558524ef3bc27f6468f4028dbe8c471479ec0096ddeb59d0bfb13defac10ea6ba9c8374178c10fc5856d4ae0a97c9c562d7feef2854ebce16eb37098ea6de34e9a60397fbb061ca5495d828393b467ed70d442018c8319ab4a4285a5ca268625c3fc46bb65d52a4b9d85359f412f0a8fb9bd2fceb01d6588fb3ec9d207014bfdb73e95bc9c919594dcc9261f02100173ff183c8ebb96fb53961bce8036e2e2589a989e774b3e2559f05e553bb407f1b3f470c2cb38b24db62f5116078e5625aa26dbb889302e91847e7429fa4af3fff7844547abb1ad97f238aa238e7f525badb0f129c579ceff78168aea79c59db0688614b4490feec93fa38195e8724ebc52615012f97e372df28fe07cd4f02bf6db3b5a387278e693d8da32786ae0236cf242fa34f9f6a6e9e02cdb2a6fff20a7e7d1bc83ee2ccbf745f1dd322b389356f398f1a23459027871b46b97a4b6b68aebc43f832f5d127906538144abd664fe09155b45213c6ba53f8a76dee4577298b270ab7011dfee27d76c2b76b9f7c9e0e208272a094a95b94a43af6fc84cc654121c3056f83b8a075289ebdcf5a76e1a67d642ec579022763dac412cb41ad1a01b1c</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+              
 
-                
-              </div>
+              
             
             <hr/>
             <div>
@@ -559,6 +542,23 @@
   
 
 
+
+
+  
+  <script defer>
+    if (document.getElementById('hbePass')) {
+      Fluid.utils.waitElementLoaded('hbe-prefix', function() {
+        var hbePrefix = document.querySelector('hbe-prefix');
+        hbePrefix.parentElement.classList.add('markdown-body');
+        Fluid.utils.retry(function() {
+          if (Fluid.boot && Fluid.boot.refresh) {
+            Fluid.boot.refresh();
+            return true;
+          }
+        }, 100, 10);
+      })
+    }
+  </script>
 
 
   

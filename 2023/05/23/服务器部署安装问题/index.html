@@ -16,15 +16,15 @@
   <meta name="author" content="黄展鸿">
   <meta name="keywords" content="">
   
-    <meta name="description" content="总结服务器部署按照软件过程中出现的问题和解决方法">
+    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器部署安装问题">
 <meta property="og:url" content="https://seriyaln.github.io/2023/05/23/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Seriyaln个人博客">
-<meta property="og:description" content="总结服务器部署按照软件过程中出现的问题和解决方法">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-23T00:56:09.000Z">
-<meta property="article:modified_time" content="2023-05-23T01:18:01.087Z">
+<meta property="article:modified_time" content="2023-05-29T00:50:51.719Z">
 <meta property="article:author" content="黄展鸿">
 <meta property="article:tag" content="服务器">
 <meta property="article:tag" content="Linux">
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          296 字
+          2.7k 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          3 分钟
+          23 分钟
         
       </span>
     
@@ -274,17 +274,22 @@
             <h1 style="display: none">服务器部署安装问题</h1>
             
             
-              <div class="markdown-body">
-                
-                <h1 id="无法通过yum安装软件"><a href="#无法通过yum安装软件" class="headerlink" title="无法通过yum安装软件"></a>无法通过yum安装软件</h1><p>网络原因，需要进入到ensxx的配置文件中将BOOTPROTO设成dhcp</p>
-<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h2 id="10061-无法连接数据库"><a href="#10061-无法连接数据库" class="headerlink" title="10061 无法连接数据库"></a>10061 无法连接数据库</h2><p>这个问题比较抽象，我安装完后服务正常启动，配置也没有任何的问题，当使用命令行连接数据库时就会报10061错误，网络上的解决方案普遍都是因为服务没有启动，但是我确定我的服务肯定是启动了的。</p>
-<blockquote>
-<p>最终，使用msi安装包安装后，开始菜单有MySQL给的命令行，使用那个命令行可以成功连接数据库。使用windows自带的命令行无法访问</p>
-</blockquote>
-<h2 id="远程访问"><a href="#远程访问" class="headerlink" title="远程访问"></a>远程访问</h2><p>远程访问需要通过修改数据库中系统用户，将localhost改为%，很神奇的是，即使设置了远程访问，我在本机还是连接不上，但是别人可以。</p>
+              
+              <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="c1d59d84cd3ed1e1115d7fa6780424321d7f3bc1c880e96fc32d81a941195ff8">8c83c1fd70b2001f095a68c8e758fb295c4f063044f716f40246118917c673cb212e57e83c14191f74720c927a14caf2854d0849ae12e304172f37168ecc7dbca79c1916475f475b06685e9566b3cc62c43e09d4d83bbf72316d7f4b653bf1bbd1cc4ece8f8a06570d2537eeac94282938e166e514c43fa3846b12efb7ea82726175548912eeba68026c65d78d4b105bb83bf067492e3351f5c276e813a408942d6769a1e3eee5f06478697c7b8bad7f6534f40307ca93af4297559609efeddcab051a210bc927c9e996e0ead0896f790283af5e946859759b1afb385dbf7b9b4298558db7194e61482918424083bc31f4336af0bff74a7b9dc83498299879bef0ef5ced82e695f818c3e1cf560e2c1ceeacee8b14d487ca7fe0c416171c4e0c9705b256401acc71951ee202d88b4ac1739d09518dace51a99bb9aa0900f926a2ec874b06e19c96beab568201deaeeb6ba8d0195b40257362c9cd4cd00fbcf24feb3ca1ca90ff223285d0df922f58718810416394f1385d66b0e859f9a891ed7f6ead5c0fa23baeb1568eecb90d2beb324f5ff2f5132c25edb658636ad938c9d4e171734e5a8fd20ca1bac9f85fb9cac856e1c98596c285b913f9605b89976ae8713ad3c0fc3b9cf0ab500d535d6c5642e7f92b6f3befafeaf1478fc336c731c77a378f4a191616d29b5441438633e4714b0b78cfc46a1d7167bc7695e3b728468f9499f9c845c8aa652d089179e26aa1d9a72333ef6e2f255708d4fc96f1efc3fa495d7680bbb0bd6f053396ec1dcea5848ae6bc551f10d94810ea7831007e007327feae31630cc415993384eb775698802a1d55bc2f1c081ae9eb0cc4502b74eaaf9fa57ac9a507b2a1064e02558958366007917b2ee3b2a37799171a56cb6246382e698f28cdc6cec908d16f84cd1fdd28194223bb05aec067ceae96b6f9dc081bac45756c648e7c979d62cf69db7b681ad0512c518394f41e82e7d6a0ede23808d541bce9e6af38c0a3301640551042ddac746c2be6b69733797dd8fa901c4eaac0f1cca7bf898598856fe3c01601442ecd89b2eb23e8789bb6775823650d9fa1d48043131fef620431987a875c5e30a04c305351ecada200b34dfc3f6699b0d6056487109ba5a48420604abcca8cee0871ff408aac27a8ca8d6e5690bd980e30d0b46f6fb427079a84f413b69e5609dd16e8d187b67cb0b660ca02a2120b375c271451fee2b6e7653f70f6f2d95a7b8705d55f8b9b447ea89aff44d8a5f138f1433a86f98f55cc139e9eed12a17489a12bef4a46b73ba4c8b1b9e3d1a795728212485a9917813b8b0b98ee6823dfe216e0509af45ed556a5f470965d749ef95a31ebe6cce8b4c71f38109a2963222d297276fffb76bb7affb46ffe8eac7e8ec837c23388dc4a48345a8eac30c17ed3ce59bddc0099e946d455629bf7fa5f64770b1a822d75bf9279807682854ac2fa12ffbb7e106a3466cf55fa4a36d9a86e2c24923b4a42a044b3af719617c07cb0a2d50fc0fdd6c084efaf2acc9e5cf31f34952e9712421441e5eda2e44bdddcf21afc2ed27ae3f98b4aeb9d982a5f73578fcb03b52fe9a57c64bb36c1283f2506aefadcfb0b0fce2d16ce3afcc50a430d6409a07b6635740ecaba7252cda3c9bbacad8192124f5f175ca32b9a29e8293d90eb28a920ea93d4f668d4646db4ccf6d3286e5d248c5f2f07cc657cf6f07e684ffc9a075cbfaea26b463b079f9c03ae873e067fecaaf5743d717559f8ace57a9024344d91393e38074dd22a5fd1c4bce20362a89631adda1279e2ed366dfe16b504543129039a131b03bc9994b117ab6dc22ce670c1ae68e68dd84a3cce8</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+              
 
-                
-              </div>
+              
             
             <hr/>
             <div>
@@ -537,6 +542,23 @@
   
 
 
+
+
+  
+  <script defer>
+    if (document.getElementById('hbePass')) {
+      Fluid.utils.waitElementLoaded('hbe-prefix', function() {
+        var hbePrefix = document.querySelector('hbe-prefix');
+        hbePrefix.parentElement.classList.add('markdown-body');
+        Fluid.utils.retry(function() {
+          if (Fluid.boot && Fluid.boot.refresh) {
+            Fluid.boot.refresh();
+            return true;
+          }
+        }, 100, 10);
+      })
+    }
+  </script>
 
 
   

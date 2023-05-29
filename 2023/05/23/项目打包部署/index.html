@@ -16,28 +16,21 @@
   <meta name="author" content="黄展鸿">
   <meta name="keywords" content="">
   
-    <meta name="description" content="如何使用HBuilder+Nginx打包和部署项目">
+    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用HB+Nginx部署项目（Vue）">
 <meta property="og:url" content="https://seriyaln.github.io/2023/05/23/%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="Seriyaln个人博客">
-<meta property="og:description" content="如何使用HBuilder+Nginx打包和部署项目">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2023/05/23/ZQYkrNUbdS4RaFX.png">
-<meta property="og:image" content="https://s2.loli.net/2023/05/23/JQTimFYp3ZbEOlK.png">
-<meta property="og:image" content="https://s2.loli.net/2023/05/23/zAU7LFnXa6xH8RG.png">
-<meta property="og:image" content="https://s2.loli.net/2023/05/23/DIhiGSHnNTc4yPz.png">
-<meta property="og:image" content="https://s2.loli.net/2023/05/23/4HSBj13FZm5hiuP.png">
-<meta property="og:image" content="https://s2.loli.net/2023/05/23/nDMVqcON13ZgSmf.png">
 <meta property="article:published_time" content="2023-05-23T00:56:09.000Z">
-<meta property="article:modified_time" content="2023-05-23T02:38:21.022Z">
+<meta property="article:modified_time" content="2023-05-29T00:50:59.103Z">
 <meta property="article:author" content="黄展鸿">
 <meta property="article:tag" content="服务器">
 <meta property="article:tag" content="部署">
 <meta property="article:tag" content="Nginx">
 <meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://s2.loli.net/2023/05/23/ZQYkrNUbdS4RaFX.png">
   
   
   
@@ -230,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          807 字
+          6.2k 字
         
       </span>
     
@@ -241,7 +234,7 @@
         
         
         
-          7 分钟
+          52 分钟
         
       </span>
     
@@ -282,39 +275,22 @@
             <h1 style="display: none">使用HB+Nginx部署项目（Vue）</h1>
             
             
-              <div class="markdown-body">
-                
-                <h1 id="1、运行项目"><a href="#1、运行项目" class="headerlink" title="1、运行项目"></a>1、运行项目</h1><p>先运行一次项目，确保项目能够正常运行</p>
-<h1 id="2、获取资格"><a href="#2、获取资格" class="headerlink" title="2、获取资格"></a>2、获取资格</h1><p>如果是公司项目打包，一般需要权限，可以联系公司的负责人，将HB账号的邮箱发给负责人，负责人会给你权限，个人项目的话可以忽略这一步</p>
-<h1 id="3、发行"><a href="#3、发行" class="headerlink" title="3、发行"></a>3、发行</h1><p>点击发行————网站、网页、手机H5————发行</p>
-<p><img src="https://s2.loli.net/2023/05/23/ZQYkrNUbdS4RaFX.png" srcset="/img/loading.gif" lazyload></p>
-<blockquote>
-<p>域名填服务器地址，如果是个人就填本机的地址</p>
-</blockquote>
-<p>导出的文件一般在项目文件夹的unpackage中</p>
-<p><img src="https://s2.loli.net/2023/05/23/JQTimFYp3ZbEOlK.png" srcset="/img/loading.gif" lazyload alt="image-20230523093301154"></p>
-<p>打开目录</p>
-<p><img src="https://s2.loli.net/2023/05/23/zAU7LFnXa6xH8RG.png" srcset="/img/loading.gif" lazyload alt="image-20230523093327143"></p>
-<p>将这两个文件放到服务器目标目录内，再配置好Nginx就可以了</p>
-<h1 id="4、Web配置"><a href="#4、Web配置" class="headerlink" title="4、Web配置"></a>4、Web配置</h1><p>点击项目下的manifest.json文件，找到web配置</p>
-<p><img src="https://s2.loli.net/2023/05/23/DIhiGSHnNTc4yPz.png" srcset="/img/loading.gif" lazyload alt="image-20230523094343331"></p>
-<p>根据需要修改路径</p>
-<h1 id="5、配置Nginx"><a href="#5、配置Nginx" class="headerlink" title="5、配置Nginx"></a>5、配置Nginx</h1><p>进入到Nginx的conf目录下，编写nginx.conf</p>
-<p><img src="https://s2.loli.net/2023/05/23/4HSBj13FZm5hiuP.png" srcset="/img/loading.gif" lazyload alt="image-20230523093529088"></p>
-<ul>
-<li>listen表示nginx的端口，根据需要修改</li>
-<li>location &#x2F; 表示访问地址，例如本机的地址是192.168.7.1，那么location就似乎192.168.7.1，location后可以添加路径用‘&#x2F;’隔开，例如location&#x2F;var，届时访问192.168.7.1&#x2F;var就会执行相应的配置</li>
-<li>root表示访问时的目录，HTML表示nginx目录下html文件夹，可以根据自己的需要进行修改</li>
-</ul>
-<p>实例：</p>
-<p><img src="https://s2.loli.net/2023/05/23/nDMVqcON13ZgSmf.png" srcset="/img/loading.gif" lazyload alt="image-20230523093909326"></p>
-<blockquote>
-<p>假如我们要访问位于D:\project\zeus-site-office-show-v2\hik-app-vue下的项目，只需要将打包好的文件放在hik-app-vue的文件夹下即可。如果我们想通过访问192.168.7.1&#x2F;hik&#x2F;appH5就访问到项目，则需要再hik-app-vue下新建hik文件夹，在hik文件夹内新建appH5文件夹，将打包的文件放入appH5文件夹，这样我们通过访问192.168.7.1&#x2F;hik&#x2F;appH5就可以访问到项目了。</p>
-</blockquote>
-<h1 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h1><p>如果打开manifest.json不是配置视图，可以先打开整个项目的文件夹，再打开需要打包的项目文件夹即可</p>
+              
+              <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="12d8c382b6a62f89f8007cbad1d6bfd9fc1ccca4b244b009fbf8e4f95bab568a">8c83c1fd70b2001f095a68c8e758fb295c4f063044f716f40246118917c673cb2d870a5bc0c9fd48dcae471f5931ffefda447fa999fc3261c74ab3547b5e4c70efd8e6ec0fefc50720dc44b26f287af59ed11390f5aa0476bfe46feda15b2fb2bfde543a180d6f5cf526201f07575111ae4e85827dc478534f850b443ff5472d743f848229237e9c95d3640525d65702d841b20728f61a8f00b449fbfef25927e138c21d2b94c8cc79f6df8ca7a586d44aab7cafb657186aa6845418743c66da95657f8196f603cc195e235b2cb8ec5f0472b360d0b362895545be451c3120da90dce639be6494dc90756e7a802931e503296a3b84cb4a4511a570998b5a2cbc2783f4a7310a4f4df47a141268f54afdd351147e4b60ab0eee98b0a6a7a333c3e59f75ee17b41bf9d1fe89b1ab7ecffa1b26e2bc491331d7b87b08734058a005eb3c3a54a7cbfcf2645c4c74ee19a665c70e29fc2b8fd49dd6d74777bebebf399bcc6c5d39b356a5751a2b5768e75af4af1f957a9a59fee22d75f1dca50a4babdd52cf99a57e24288f1606b58d94f92d7899793ae1cd9b6e57bcb9e1546e3dd26545ee4447f6e0eddd441c9dcf1afe275929339dfc52cc1ec9a67476e6cfbcad9010ca58c893d7152db5fa52640e76e8f522a172395e209e589c136511485476b7746808635351e4b27e0f0a5c4aa1e9dbf42fd4efd1cb102e03312be5c5d45e7a1d101278576bf47e117a0faa35fe4bc4b1e24999571da0fab9dd071489cb722914acd3c965084ae0fed35fbf90c75471a7784469afee1e56a46331a19fffc1735bec6ee5d560540984065bfcf256c058138d8ba93e2d0980376307e25207d217caa7950c9f5a23cfd4f3b595bdca9183bb931796017e6fdd686331827a31f1b690e24d8a8ed069bad1847b498f9f8a7dc5a316f929036194eff42b2df47de50f5fd41916a798037f282ddb0f57dd5545ff4a2b1d1b52723a639294f104d6c863da89c91d5d15727532381d7b41b30f51bb7148e6728fdb050acefa5424107dbb9c7fb4930d8838d46cb23d8a89eb680b0202e718e341a107d651e6e306822d5723b6e9518c8889a30cef0bbdc849b0edb244f1f8a448bee2402644e2b23c23ab9ab5bc2ddaeffc9077d6ce821d6c80ce1ebd3a9871ce9a850961d06d784338bc094939811c0b88c2a8cccc23a425f9907622714be3ccecaf1af37da3f676ac484d11f596d90bfac53777393f5cb2ed73a5bd6742d8dcabdd1a73e401ab8745a83502cfebfa3bb9f4c9c67f92abab4bbbf9501258e8b0465ba438e4dcf67cd7056bde9f091bd37dbf6c2f017317e7078472717fc665838f8b502eaa672b9c350ebae14bf3df39d4f5b3a2d0ceaeb9da1ed1be94b68f4ac3a02304420e08c125454f8dc783d3556b9f33c99410e4c3e0f6612caf598f900f5b5ef231b4a783ece1d640ba1497517db58d56108ff6f2ff4296a684d9791690423860826d1a05f2ef879d2e6f65d53fd14ef749b79f509d463c4af4044771e77666e36640f4f8ea5e0446964535d72855ddadb63204cadfc524035ae1be84e266d22c33638b1259b8840c3675243f4ecf3d4dc5e10aac131825904146d2210f0bfff82dce674a08f1c8b90d9fcde2203c3a654e6a154bf8a948f42c205a9b298aa6a3daa83171a0395cdbdd96b12170811c2c0d8cd8ae858afdaa08bc9631686205641b335da7a29ed109f8800689a7bb7f1804c3a62678278be9ad59daf1b62a3c50db0f2503dfd703b5b1b77c7aa52939b8250cb0281b74e335a6136cb6793019bde69ad62e863f2bd162d15029f84f9aac027b73cae64833525cad8104c293a2dec9e30bf2f0d2cb4272a77d9659137f5eed07932cd3a9cd6984b9db9b60afb1dde44f6c974f484a13e289f1704e63d713cb67f7b013d7745c35cb71b85aed27917f565eebd6b19c80d1f809cfa86e1eaefadcfe8f9597f1f656df9254492f93bbfc0c742eae9eda93a9f7587c919ece4d3b891a4f56174d0de11b231e64e56cbb54c14e210851c85711c9d50964c5248c7e896839785aff16f9b6426482ad9c26124963e59f3c86ec8fdfd44a80849c8fda3b80f0fa64e46f0f8bf2f414a8081e44fd77d14de592d873334d5a008840a8ee2897af24280f843b76328384d82f46895049250f4a8a333850d839726d2bf97d787f07f7f61044609302166383ccc668db03edf9c7aace0d14e33e14bd489495c23d287663d8d84539c43f524fa9452728ab260480d65627b95fe8b21e73e51dddfeaf0363544ac5f335c905832c44e3312cca97a09256fd1f216fdfda0f66684c66aeddd3bf323c754a32ae355127f3201700190c76abd9b32b6a3e92ab56ada6ccb88e062135a7b2c0ddb3288611298655575c23fe938c4d649d21268325325eb3422a4bc20239dd9451b9de19688561273535b9ed2d37c6b4787c0a3cf5b8d79c78b636967765879e82155b58ff540035264de4688ce511fa009c59d1bada15770bdb6ae55de80195ce08bfcaa9fb1b0e9e26b6bcea984d7c8d4d3d226e5655392af16fc9e85a14ab85a613d1ed63893761ad3e50ae35b10cfbe5a3a7eae5e2adc3d1255a68bf2514505e8063064bea1d81ba53dc00ba51b47131283175f42b8b6ecc2aa5c1d4f65cd5e6911247bb9b46391d5c331ff6dac73bfae3a49ee2bec30502a47bd986fa5f04afb99244e0604a2ad5c9603da3fa50c4cdf2b573761e4f598cc0ece96457ed9193be690c951fdbe5b7287e4de735acb6a707a8c45d12f75b0a887ffeecd018e692cd9944bba0f15216baa2ca3617a6eb6186d53fc4a880ea8f882190898eefa5b1909998b20e5ee317c7ca5e64c0e65ab1138e3a68ef0aa4b5b77e833e73e901cc6ef56d65aee5af297290d928b32937aec90963666c7e33a2130b031bdac5028f0dba0f63ad2e54a87ec50ebe0cb0d66af522a4a3cff705e23154d78e426660e6d1e6dc06750762058f8ab9bd1b30d8514c67bdf230352b31538bbe4cebbdc56976cfafc3bd1e1df00e223528ab21bd06b1f82014376d848b2a5ceb9d5fb98e4923b6fe0803588013534236ff2feaec581fad467b052a4f7e24c2a9bc01dd09860e7875e1b6bb4cbb4237733be249e0ad4cf5de8c73c833ef5c7622f08643705f58398c9414dccd672a84709b284fbe30b0de120941acb0a1b940c29038e658a05b2531881f341e49941941ffdfa613450ae6b7f0b1c028e7213c0b1eefaedc2824bbeefc62765bf226377e6f374dbed5b00de6ebe67e318a30d464d2ff46bf11e53b4525e99d30832786ef8acc96f092322caa34084eac5541d45a87285cad14e2404f91e190b7281adf03076a2ff55ac2d2bb50d8a27eebc1dbe6218661a406a57ed3469de5e5396e83ef4e237d32aaaf1181d14acdd7719c3f480a9e0c2b1701b83332cb07738e472e2d317b7f15d4b052b85c761bbcd22617758f1d4ec0f6fbd22c8001701b16a5eb293bac44078dede0834f2470408c5c482c7f047307162546222f2cbdd90efb079788a6321d339d91e8f8e48ea0b08fde5beac0f84a22179d9c1aa3060988f90396b407f45acf4300158589f6dffce7c859d5231a76aa82d14b107f780bf8978898c134134cacb99bf7990828dd194aeccbef34eb60d1e59ec8b6b1cfb26470dac8e208a25b55876363c52e5d8668c916a6db25fd1336104e09757eb3ff51b3e053427b9250ffd56851aabb7a31d079d1813213cb930d93c02364fbdedeecae179748ad4b9a24a4aa93480a4458dee0d6ce323d5c16031ebd045b105549e4d03226997f1224fa252a3988bc139bfc69255c41e93cffd7ca9fb1ab47c887c1939f12643f2cd205e8d1d847c69e92d1a01b1ba0eead375ad8c93ebaf82133e3dcf9f7f015ad1e8ab5742b662e387504807b8143ffc17c13e5cbb1589d652302e9b989c477017dbb8df04402011c6609b9ab71e6b11f369c74639e36a51a83b9556817036c2fa67244333f3916918ab68a8d329de7bd1626238872e60454edec0ee5a4b76f80e3a5e41d5178e848d820f5ee48c0128e4540a0e0b57ba4bb463024b6ca22c8c9c360aaf2b8aaa39a389c5a3e0a4e9311993548ab0341c57fe0459667a7445ade50fd214341aafb89c92abf8344352918c56a4c5a45a0137cb62fc872724a930431e3e8ac88a00091a25ea9371d3f27e7c38883240a52e262b3e478f67884887b26265e10af0d854ccf73bc08eab9293287ba1f00c1bf015a4a213279bdd9b7441c440f99d038768cbc63bc53beaf7cadc60b0f93b51f34f06787b0f7f6fe8301f5cc0b5177b12124234aaf3aef787722c4c96605895ccc0b4713efc9f14bb2e550ca517aee485dca86f05db9fa25245f86e936bb72dafc802273</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+              
 
-                
-              </div>
+              
             
             <hr/>
             <div>
@@ -575,6 +551,23 @@
   
 
 
+
+
+  
+  <script defer>
+    if (document.getElementById('hbePass')) {
+      Fluid.utils.waitElementLoaded('hbe-prefix', function() {
+        var hbePrefix = document.querySelector('hbe-prefix');
+        hbePrefix.parentElement.classList.add('markdown-body');
+        Fluid.utils.retry(function() {
+          if (Fluid.boot && Fluid.boot.refresh) {
+            Fluid.boot.refresh();
+            return true;
+          }
+        }, 100, 10);
+      })
+    }
+  </script>
 
 
   
